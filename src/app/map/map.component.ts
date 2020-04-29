@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import * as Mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -7,20 +7,21 @@ import { environment } from 'src/environments/environment';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, AfterContentInit {
 
   map: Mapboxgl.Map;;
 
   constructor() { }
-
-  ngOnInit(): void {
-    this.initilizeMap();
-
+  ngAfterContentInit(): void {
     this.createMarker(-74.0104912, 45.5576996, '#ee5253', "Québec");
     this.createMarker(2.2770198, 48.8588377, '#ee5253', "France");
     this.createMarker(7.3248299, 46.9546486, '#ee5253', "Suisse");
     this.createMarker(4.30535, 50.8549541, '#ee5253', "Belgique");
     this.createMarker(-72.3545011, 18.5790242, '#ee5253', "Haïti");
+  }
+
+  ngOnInit(): void {
+    this.initilizeMap();
   }
 
   initilizeMap() {
@@ -33,14 +34,6 @@ export class MapComponent implements OnInit {
     });
 
     this.map.addControl(new Mapboxgl.NavigationControl(), 'bottom-right');
-
-    this.map.addControl(
-      new Mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true
-        },
-        trackUserLocation: true
-      }), 'bottom-right');
 
   }
 
