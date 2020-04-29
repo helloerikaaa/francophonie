@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import anime from 'animejs/lib/anime.es.js';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,5 @@ import anime from 'animejs/lib/anime.es.js';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    anime({
-      targets: '#world-img',
-      rotate: '360',
-      duration: '3000',
-      loop:true
-    });
   }
 }
