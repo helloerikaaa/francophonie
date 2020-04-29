@@ -1,5 +1,6 @@
 $color-font: #f1f2f6;
 $map-button-color: #ee5253;
+$map-button-hover: #ff6b6b;
 
 h1 {
     font-family: "Grand Hotel", cursive;
@@ -13,7 +14,24 @@ button {
     background-color: $map-button-color !important;
     color: $color-font;
     border: $map-button-color;
+    font-family: 'Raleway', sans-serif;
 }
+
+p {
+    color: $color-font;
+    font-size: .7em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.marker-start {
+    color: $map-button-color;
+    font-size: 3em;
+}
+
 
 @media (min-width: 1281px) {
 }
@@ -59,12 +77,15 @@ button {
     h1 {
         font-family: "Grand Hotel", cursive;
         color: $color-font;
-        font-size: 3em;
-        padding-top: 10px;
+        font-size: 3.5em;
     }
 
     img {
-        width: 70%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
+    }
+
+    .container {
+        margin-top: 60px;
     }
 }
