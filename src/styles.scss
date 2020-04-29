@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+$background: #60a3bc;
+
+
+* {
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: $background;
+    width: 97vw;
+    height: 97vh;
+}

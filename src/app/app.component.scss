@@ -1,0 +1,16 @@
+$color-font: #f1f2f6;
+$map-button-color: #ee5253;
+
+h1 {
+    font-family: 'Grand Hotel', cursive;
+    color: $color-font;
+    font-size: 4em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: $map-button-color !important;
+    color: $color-font;
+    border: $map-button-color;
+}

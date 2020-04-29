@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "francophonie"
+    }
+  },
+  "defaultProject": "francophonie",
+  "cli": {
+    "analytics": "7a53d409-7c0f-4d10-a64b-531f43a8e5ca"
+  }
 }
