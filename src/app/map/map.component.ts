@@ -38,7 +38,13 @@ export class MapComponent implements OnInit, AfterContentInit {
   }
 
   createMarker(lng: number, lat: number, color: string, description: string) {
-    var popup = new Mapboxgl.Popup({ offset: 25 }).setText(description);
+    var html = "<a class='marker-popup' href=[routerLink]=\"['/carte/" + description + "']\"></a>"
+    var html2 = '<div class="card" style="width:200px; height: 300px"><img class="card-img-top" src="../assets/img/world-no-shadow.png" style="width: 200px;" alt="Card image"><div class="card-body"><h4 class="card-title">' + description + '</h4><p class="card-text">Exemple de texte.</p></div></div>'
+    var popup = new Mapboxgl.Popup({
+      anchor: 'bottom',   // To show popup on top
+      offset: { 'bottom': [0, -10] },  // To prevent popup from over shadowing the marker.
+      closeOnClick: true   // To prevent close on mapClick.
+    }).setHTML(html2);
     const marker = new Mapboxgl.Marker({ "color": color })
       .setLngLat([lng, lat])
       .setPopup(popup)
