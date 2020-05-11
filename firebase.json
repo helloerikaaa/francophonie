@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "site": "francophonieafz",
+    "public": "dist/francophonie",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "/public/**",
+      "destination": "/public.html"
+    },
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }]
+  }
+}

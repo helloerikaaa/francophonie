@@ -13,11 +13,11 @@ export class MapComponent implements OnInit, AfterContentInit {
 
   constructor() { }
   ngAfterContentInit(): void {
-    this.createMarker(-74.0104912, 45.5576996, '#ee5253', "Québec");
-    this.createMarker(2.2770198, 48.8588377, '#ee5253', "France");
-    this.createMarker(7.3248299, 46.9546486, '#ee5253', "Suisse");
-    this.createMarker(4.30535, 50.8549541, '#ee5253', "Belgique");
-    this.createMarker(-72.3545011, 18.5790242, '#ee5253', "Haïti");
+    this.createMarker(-114.6465902, 54.1660886, '#ee5253', "canada", "Canada");
+    this.createMarker(2.2770198, 48.8588377, '#ee5253', "france1", "France");
+    this.createMarker(1.3628007, 43.6006786, '#ee5253', "france2", "France");
+    this.createMarker(-8.0778939, 31.6346023, '#ee5253', "maroc", "Maroc");
+    this.createMarker(-0.4704331, 27.9654412, '#ee5253', "algerie", "L'Algérie");
   }
 
   ngOnInit(): void {
@@ -37,9 +37,8 @@ export class MapComponent implements OnInit, AfterContentInit {
 
   }
 
-  createMarker(lng: number, lat: number, color: string, description: string) {
-    var html = "<a class='marker-popup' href=[routerLink]=\"['/carte/" + description + "']\"></a>"
-    var html2 = '<div class="card" style="width:200px; height: 300px"><img class="card-img-top" src="../assets/img/world-no-shadow.png" style="width: 200px;" alt="Card image"><div class="card-body"><h4 class="card-title">' + description + '</h4><p class="card-text">Exemple de texte.</p></div></div>'
+  createMarker(lng: number, lat: number, color: string, country: string, name: string) {
+    var html2 = '<div class="card" style="width:200px; height: 300px"><img class="card-img-top" src="../assets/img/affiche/'+ country + '.jpeg"' + 'style="width: 200px;" alt="Card image"><div class="card-body"><h4 class="card-title">' + name + '</h4><p class="card-text">Exemple de texte.</p> <a href="../assets/img/affiche/'+ country + '.jpeg">Voir l\'affiche en taille réelle </a>' + '</div></div>'
     var popup = new Mapboxgl.Popup({
       anchor: 'bottom',   // To show popup on top
       offset: { 'bottom': [0, -10] },  // To prevent popup from over shadowing the marker.
@@ -50,6 +49,4 @@ export class MapComponent implements OnInit, AfterContentInit {
       .setPopup(popup)
       .addTo(this.map);
   }
-
-
 }
