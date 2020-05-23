@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "francophonieafz",
+    "site": "francophonie-afz",
     "public": "dist/francophonie",
     "ignore": [
       "firebase.json",

@@ -9,15 +9,15 @@ import { environment } from 'src/environments/environment';
 })
 export class MapComponent implements OnInit, AfterContentInit {
 
-  map: Mapboxgl.Map;;
+  map: Mapboxgl.Map;
 
   constructor() { }
   ngAfterContentInit(): void {
-    this.createMarker(-114.6465902, 54.1660886, '#ee5253', "canada", "Canada");
-    this.createMarker(2.2770198, 48.8588377, '#ee5253', "france1", "France");
-    this.createMarker(1.3628007, 43.6006786, '#ee5253', "france2", "France");
-    this.createMarker(-8.0778939, 31.6346023, '#ee5253', "maroc", "Maroc");
-    this.createMarker(-0.4704331, 27.9654412, '#ee5253', "algerie", "L'Algérie");
+    this.createMarker(-114.6465902, 54.1660886, '#ee5253', "canada", "Canada", "300px");
+    this.createMarker(2.2770198, 48.8588377, '#ee5253', "france1", "France", "400px");
+    this.createMarker(1.3628007, 43.6006786, '#ee5253', "france2", "France", "400px");
+    this.createMarker(-8.0778939, 31.6346023, '#ee5253', "maroc", "Maroc", "250px");
+    this.createMarker(-0.4704331, 27.9654412, '#ee5253', "algerie", "L'Algérie", "270px");
   }
 
   ngOnInit(): void {
@@ -37,8 +37,8 @@ export class MapComponent implements OnInit, AfterContentInit {
 
   }
 
-  createMarker(lng: number, lat: number, color: string, country: string, name: string) {
-    var html2 = '<div class="card" style="width:200px; height: 300px"><img class="card-img-top" src="../assets/img/affiche/'+ country + '.jpeg"' + 'style="width: 200px;" alt="Card image"><div class="card-body"><h4 class="card-title">' + name + '</h4><p class="card-text">Exemple de texte.</p> <a href="../assets/img/affiche/'+ country + '.jpeg">Voir l\'affiche en taille réelle </a>' + '</div></div>'
+  createMarker(lng: number, lat: number, color: string, country: string, name: string, height: string) {
+    var html2 = '<div class="card" style="width:200px; height:' + height + '"><img class="card-img-top" src="../assets/img/affiche/'+ country + '.jpeg"' + 'style="width: 200px;" alt="Card image"><div class="card-body"><h4 class="card-title">' + name + '</h4><p class="card-text"></p> <a href="../assets/img/affiche/'+ country + '.jpeg">Voir l\'affiche en taille réelle </a>' + '</div></div>'
     var popup = new Mapboxgl.Popup({
       anchor: 'bottom',   // To show popup on top
       offset: { 'bottom': [0, -10] },  // To prevent popup from over shadowing the marker.
