@@ -18,6 +18,9 @@ export class MapComponent implements OnInit, AfterContentInit {
     this.createMarker(1.3628007, 43.6006786, '#ee5253', "france2", "France", "400px");
     this.createMarker(-8.0778939, 31.6346023, '#ee5253', "maroc", "Maroc", "250px");
     this.createMarker(-0.4704331, 27.9654412, '#ee5253', "algerie", "L'Algérie", "270px");
+    this.createMarker(-72.3545005, 18.5791869, '#ee5253', "haiti", "Haiti", "270px");
+    this.createMarker(-20.3037354, 57.4656383, '#ee5253', "maurice", "L'Île Maurice", "270px");
+    this.createMarker(-3.4895984, 23.4191852, '#ee5253', "congo", "Congo", "270px");
   }
 
   ngOnInit(): void {
